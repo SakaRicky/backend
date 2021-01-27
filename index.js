@@ -1,6 +1,30 @@
 const express = require('express')
 const app = express();
 const cors = require('cors');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const mongodb_password = process.env.MONGO_PASSWORD
+
+console.log("password:", mongodb_password);
+
+const url =
+  `mongodb+srv://rickysaka:${mongodb_password}@cluster0.u3l97.mongodb.net/note-app?retryWrites=true&w=majority`
+
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+
+
+const noteSchema = new mongoose.Schema({
+  content: String,
+  date: Date,
+  important: Boolean
+})
+
+const Note = mongoose.model('Note', noteSchema);
+
+
+
+
 
 let notes = [
     {
@@ -33,7 +57,9 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/notes', (request, response) => {
-  response.json(notes)
+  Note.find({}).then(notes => {
+    response.json(notes)
+  })
 })
 
 app.get('/api/notes/:id', (request, response) => {
