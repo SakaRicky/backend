@@ -44,7 +44,6 @@ app.get('/api/notes/:id', (request, response) => {
 
 const generateID = () => {
     const maxID = notes.length > 0 ? Math.max(...notes.map(note => note.id)) : 0
-    const note = request.body;
     return maxID + 1;
 }
 
@@ -76,6 +75,7 @@ app.delete('/api/notes/:id', (request, response) => {
     response.status(204).end();
 })
 
+//https://guarded-castle-66521.herokuapp.com/
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
