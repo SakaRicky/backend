@@ -1,4 +1,5 @@
 # dependencies
 /node_modules
 
+# Envirenmoent variables are stored here
 .env

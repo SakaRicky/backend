@@ -1,0 +1,31 @@
+GET http://localhost:3001/api/notes/
+
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+
+{
+    "content": "lol",
+    "important": false
+}
+
+###
+GET http://localhost:3001/api/notes/6011db8cb28371287c9ae984
+
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+
+{
+    "content": "VS Code Rest Client testing logger",
+    "important": false
+}
+
+###
+PUT http://localhost:3001/api/notes/6013ebf39addc734ac767a7d HTTP/1.1
+content-type: application/json
+
+{
+    "content": "lol",
+    "important": false
+}
