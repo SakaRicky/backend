@@ -3,3 +3,6 @@
 
 # Envirenmoent variables are stored here
 .env
+
+# Linting settings, which is different for windows pc
+.eslintrc.js

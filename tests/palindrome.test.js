@@ -17,3 +17,8 @@ test('palindrome of releveler', () => {
 
   expect(result).toBe('releveler')
 })
+
+test('The palindrome of omo is', () => {
+  const result = palindrome('omo')
+  expect(result).toBe('omo')
+})
