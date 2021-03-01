@@ -1,0 +1,8 @@
+###
+post http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "sakaricky91",
+    "password": "jw76102907"
+}
